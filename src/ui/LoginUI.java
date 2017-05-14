@@ -29,11 +29,11 @@ public class LoginUI extends javax.swing.JFrame {
 
         lbl_QQ = new javax.swing.JLabel();
         text_QQ = new javax.swing.JTextField();
-        password = new javax.swing.JPasswordField();
         lbl_Password = new javax.swing.JLabel();
+        pwd_Password = new javax.swing.JPasswordField();
+        btn_Login = new javax.swing.JButton();
         lbl_Register = new javax.swing.JLabel();
         lbl_FindPassword = new javax.swing.JLabel();
-        btn_Login = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MyJavaQQ");
@@ -47,13 +47,17 @@ public class LoginUI extends javax.swing.JFrame {
             }
         });
 
-        password.addActionListener(new java.awt.event.ActionListener() {
+        lbl_Password.setText("密码:");
+
+        pwd_Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordActionPerformed(evt);
+                pwd_PasswordActionPerformed(evt);
             }
         });
 
-        lbl_Password.setText("密码:");
+        btn_Login.setBackground(new java.awt.Color(51, 102, 255));
+        btn_Login.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Login.setText("登陆");
 
         lbl_Register.setForeground(new java.awt.Color(51, 102, 255));
         lbl_Register.setText("注册账号");
@@ -65,10 +69,6 @@ public class LoginUI extends javax.swing.JFrame {
 
         lbl_FindPassword.setForeground(new java.awt.Color(51, 102, 255));
         lbl_FindPassword.setText("找回密码");
-
-        btn_Login.setBackground(new java.awt.Color(51, 102, 255));
-        btn_Login.setForeground(new java.awt.Color(255, 255, 255));
-        btn_Login.setText("登陆");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,7 +82,7 @@ public class LoginUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(text_QQ)
-                    .addComponent(password))
+                    .addComponent(pwd_Password))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbl_FindPassword)
@@ -103,7 +103,7 @@ public class LoginUI extends javax.swing.JFrame {
                     .addComponent(lbl_Register))
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pwd_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_Password)
                     .addComponent(lbl_FindPassword))
                 .addGap(18, 18, 18)
@@ -118,9 +118,9 @@ public class LoginUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_text_QQActionPerformed
 
-    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
+    private void pwd_PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwd_PasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordActionPerformed
+    }//GEN-LAST:event_pwd_PasswordActionPerformed
 
     private void lbl_RegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_RegisterMouseClicked
         // TODO add your handling code here:
@@ -168,7 +168,7 @@ public class LoginUI extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_Password;
     private javax.swing.JLabel lbl_QQ;
     private javax.swing.JLabel lbl_Register;
-    private javax.swing.JPasswordField password;
+    private javax.swing.JPasswordField pwd_Password;
     private javax.swing.JTextField text_QQ;
     // End of variables declaration//GEN-END:variables
 }

@@ -34,7 +34,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="text_QQ" max="32767" attributes="0"/>
-                  <Component id="password" max="32767" attributes="0"/>
+                  <Component id="pwd_Password" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -61,7 +61,7 @@
               </Group>
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="password" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pwd_Password" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lbl_Password" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lbl_FindPassword" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -83,14 +83,25 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="text_QQActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="password">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="lbl_Password">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x5bc6;&#x7801;:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="pwd_Password">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pwd_PasswordActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_Login">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="66" red="33" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#x767b;&#x9646;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_Register">
@@ -110,17 +121,6 @@
           <Color blue="ff" green="66" red="33" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#x627e;&#x56de;&#x5bc6;&#x7801;"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btn_Login">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="66" red="33" type="rgb"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="&#x767b;&#x9646;"/>
       </Properties>
     </Component>
   </SubComponents>

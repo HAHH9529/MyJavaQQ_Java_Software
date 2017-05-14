@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "TableUser.findByUserAddress", query = "SELECT t FROM TableUser t WHERE t.userAddress = :userAddress")
     , @NamedQuery(name = "TableUser.findByUserPhone", query = "SELECT t FROM TableUser t WHERE t.userPhone = :userPhone")
     , @NamedQuery(name = "TableUser.findByRegisterDate", query = "SELECT t FROM TableUser t WHERE t.registerDate = :registerDate")})
-public class TableUser implements Serializable {
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -62,14 +62,14 @@ public class TableUser implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date registerDate;
 
-    public TableUser() {
+    public User() {
     }
 
-    public TableUser(Integer userNumber) {
+    public User(Integer userNumber) {
         this.userNumber = userNumber;
     }
 
-    public TableUser(Integer userNumber, String userNickname, String userPassword, Date registerDate) {
+    public User(Integer userNumber, String userNickname, String userPassword, Date registerDate) {
         this.userNumber = userNumber;
         this.userNickname = userNickname;
         this.userPassword = userPassword;
@@ -150,10 +150,10 @@ public class TableUser implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TableUser)) {
+        if (!(object instanceof User)) {
             return false;
         }
-        TableUser other = (TableUser) object;
+        User other = (User) object;
         if ((this.userNumber == null && other.userNumber != null) || (this.userNumber != null && !this.userNumber.equals(other.userNumber))) {
             return false;
         }

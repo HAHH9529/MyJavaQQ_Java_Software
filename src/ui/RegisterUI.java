@@ -35,21 +35,21 @@ public class RegisterUI extends javax.swing.JFrame {
         pwd_Password = new javax.swing.JPasswordField();
         lbl_RePassword = new javax.swing.JLabel();
         pwd_RePassword = new javax.swing.JPasswordField();
+        lbl_Birthday = new javax.swing.JLabel();
+        text_BirthdayYear = new javax.swing.JTextField();
+        lbl_BirthdayYear = new javax.swing.JLabel();
+        text_BirthdayMonth = new javax.swing.JTextField();
+        lbl_BirthdayMonth = new javax.swing.JLabel();
+        text_BirthdayDay = new javax.swing.JTextField();
+        lbl_BirthdayDay = new javax.swing.JLabel();
         lbl_Sex = new javax.swing.JLabel();
         radio_SexMale = new javax.swing.JRadioButton();
         radio_SexFemale = new javax.swing.JRadioButton();
         lbl_Address = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        text_Address = new javax.swing.JTextField();
+        lbl_Phone = new javax.swing.JLabel();
+        text_Phone = new javax.swing.JTextField();
+        btn_Submitted = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +58,26 @@ public class RegisterUI extends javax.swing.JFrame {
         lbl_Password.setText("密码：");
 
         lbl_RePassword.setText("确认密码：");
+
+        lbl_Birthday.setText("出生日期：");
+
+        text_BirthdayYear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text_BirthdayYearActionPerformed(evt);
+            }
+        });
+
+        lbl_BirthdayYear.setText("年");
+
+        text_BirthdayMonth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text_BirthdayMonthActionPerformed(evt);
+            }
+        });
+
+        lbl_BirthdayMonth.setText("月");
+
+        lbl_BirthdayDay.setText("日");
 
         lbl_Sex.setText("性别：");
 
@@ -69,35 +89,20 @@ public class RegisterUI extends javax.swing.JFrame {
 
         lbl_Address.setText("所在地：");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        text_Address.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                text_AddressActionPerformed(evt);
             }
         });
 
-        jLabel6.setText("手机号码：");
+        lbl_Phone.setText("手机号码：");
 
-        jLabel1.setText("出生日期：");
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        btn_Submitted.setText("确认无误，注册账号");
+        btn_Submitted.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                btn_SubmittedActionPerformed(evt);
             }
         });
-
-        jLabel2.setText("年");
-
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setText("月");
-
-        jLabel4.setText("日");
-
-        jButton1.setText("确认无误，注册账号");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,10 +111,10 @@ public class RegisterUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Submitted, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
+                            .addComponent(lbl_Birthday)
                             .addComponent(lbl_Password)
                             .addComponent(lbl_Nickname)
                             .addComponent(lbl_RePassword))
@@ -120,30 +125,30 @@ public class RegisterUI extends javax.swing.JFrame {
                                 .addComponent(text_Nickname)
                                 .addComponent(pwd_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(text_BirthdayYear, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2)
+                                .addComponent(lbl_BirthdayYear)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(text_BirthdayMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(radio_SexFemale)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
+                                        .addComponent(lbl_BirthdayMonth)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(text_BirthdayDay, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel4))))))
+                                        .addComponent(lbl_BirthdayDay))))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6)
+                            .addComponent(lbl_Phone)
                             .addComponent(lbl_Address)
                             .addComponent(lbl_Sex))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(radio_SexMale)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(text_Phone)
+                            .addComponent(text_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(60, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -163,13 +168,13 @@ public class RegisterUI extends javax.swing.JFrame {
                     .addComponent(pwd_RePassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(lbl_Birthday)
+                    .addComponent(text_BirthdayYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_BirthdayYear)
+                    .addComponent(text_BirthdayMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_BirthdayMonth)
+                    .addComponent(text_BirthdayDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbl_BirthdayDay))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbl_Sex)
@@ -179,30 +184,35 @@ public class RegisterUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_Address)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(text_Address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbl_Phone)
+                    .addComponent(text_Phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_Submitted, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void text_AddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_AddressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_text_AddressActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void text_BirthdayYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_BirthdayYearActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_text_BirthdayYearActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void text_BirthdayMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_BirthdayMonthActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_text_BirthdayMonthActionPerformed
+
+    private void btn_SubmittedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SubmittedActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btn_SubmittedActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,27 +250,27 @@ public class RegisterUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Submitted;
     private javax.swing.ButtonGroup buttonGroup_Sex;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel lbl_Address;
+    private javax.swing.JLabel lbl_Birthday;
+    private javax.swing.JLabel lbl_BirthdayDay;
+    private javax.swing.JLabel lbl_BirthdayMonth;
+    private javax.swing.JLabel lbl_BirthdayYear;
     private javax.swing.JLabel lbl_Nickname;
     private javax.swing.JLabel lbl_Password;
+    private javax.swing.JLabel lbl_Phone;
     private javax.swing.JLabel lbl_RePassword;
     private javax.swing.JLabel lbl_Sex;
     private javax.swing.JPasswordField pwd_Password;
     private javax.swing.JPasswordField pwd_RePassword;
     private javax.swing.JRadioButton radio_SexFemale;
     private javax.swing.JRadioButton radio_SexMale;
+    private javax.swing.JTextField text_Address;
+    private javax.swing.JTextField text_BirthdayDay;
+    private javax.swing.JTextField text_BirthdayMonth;
+    private javax.swing.JTextField text_BirthdayYear;
     private javax.swing.JTextField text_Nickname;
+    private javax.swing.JTextField text_Phone;
     // End of variables declaration//GEN-END:variables
 }

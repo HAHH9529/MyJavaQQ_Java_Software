@@ -30,10 +30,10 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jButton1" alignment="1" min="-2" pref="278" max="-2" attributes="0"/>
+                  <Component id="btn_Submitted" alignment="1" min="-2" pref="278" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_Birthday" min="-2" max="-2" attributes="0"/>
                           <Component id="lbl_Password" min="-2" max="-2" attributes="0"/>
                           <Component id="lbl_Nickname" min="-2" max="-2" attributes="0"/>
                           <Component id="lbl_RePassword" min="-2" max="-2" attributes="0"/>
@@ -46,20 +46,20 @@
                               <Component id="pwd_Password" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jTextField1" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="text_BirthdayYear" min="-2" pref="35" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbl_BirthdayYear" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField4" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="text_BirthdayMonth" min="-2" pref="35" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="radio_SexFemale" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lbl_BirthdayMonth" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField5" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="text_BirthdayDay" min="-2" pref="35" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lbl_BirthdayDay" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -67,15 +67,15 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_Phone" min="-2" max="-2" attributes="0"/>
                           <Component id="lbl_Address" min="-2" max="-2" attributes="0"/>
                           <Component id="lbl_Sex" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="radio_SexMale" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField3" max="32767" attributes="0"/>
-                          <Component id="jTextField2" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="text_Phone" max="32767" attributes="0"/>
+                          <Component id="text_Address" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -103,13 +103,13 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbl_Birthday" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="text_BirthdayYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbl_BirthdayYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="text_BirthdayMonth" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbl_BirthdayMonth" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="text_BirthdayDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbl_BirthdayDay" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -122,15 +122,15 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbl_Address" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="text_Address" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbl_Phone" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="text_Phone" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="50" max="-2" attributes="0"/>
+              <Component id="btn_Submitted" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace pref="60" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -158,6 +158,38 @@
     </Component>
     <Component class="javax.swing.JPasswordField" name="pwd_RePassword">
     </Component>
+    <Component class="javax.swing.JLabel" name="lbl_Birthday">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x51fa;&#x751f;&#x65e5;&#x671f;&#xff1a;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="text_BirthdayYear">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="text_BirthdayYearActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_BirthdayYear">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x5e74;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="text_BirthdayMonth">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="text_BirthdayMonthActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_BirthdayMonth">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x6708;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="text_BirthdayDay">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_BirthdayDay">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x65e5;"/>
+      </Properties>
+    </Component>
     <Component class="javax.swing.JLabel" name="lbl_Sex">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x6027;&#x522b;&#xff1a;"/>
@@ -184,54 +216,25 @@
         <Property name="text" type="java.lang.String" value="&#x6240;&#x5728;&#x5730;&#xff1a;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="text_Address">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="text_AddressActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
+    <Component class="javax.swing.JLabel" name="lbl_Phone">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x624b;&#x673a;&#x53f7;&#x7801;&#xff1a;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="text_Phone">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#x51fa;&#x751f;&#x65e5;&#x671f;&#xff1a;"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#x5e74;"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#x6708;"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField5">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#x65e5;"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btn_Submitted">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x786e;&#x8ba4;&#x65e0;&#x8bef;&#xff0c;&#x6ce8;&#x518c;&#x8d26;&#x53f7;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_SubmittedActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

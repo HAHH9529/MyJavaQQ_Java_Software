@@ -52,7 +52,7 @@ public class User implements Serializable {
     private String userSex;
     @Column(name = "User_Birthday")
     @Temporal(TemporalType.DATE)
-    private Date userBirthday;
+    private String userBirthday;
     @Column(name = "User_Address")
     private String userAddress;
     @Column(name = "User_Phone")
@@ -60,7 +60,7 @@ public class User implements Serializable {
     @Basic(optional = false)
     @Column(name = "Register_Date")
     @Temporal(TemporalType.DATE)
-    private Date registerDate;
+    private String registerDate;
 
     public User() {
     }
@@ -69,7 +69,7 @@ public class User implements Serializable {
         this.userNumber = userNumber;
     }
 
-    public User(Integer userNumber, String userNickname, String userPassword, Date registerDate) {
+    public User(Integer userNumber, String userNickname, String userPassword, String registerDate) {
         this.userNumber = userNumber;
         this.userNickname = userNickname;
         this.userPassword = userPassword;
@@ -108,11 +108,11 @@ public class User implements Serializable {
         this.userSex = userSex;
     }
 
-    public Date getUserBirthday() {
+    public String getUserBirthday() {
         return userBirthday;
     }
 
-    public void setUserBirthday(Date userBirthday) {
+    public void setUserBirthday(String userBirthday) {
         this.userBirthday = userBirthday;
     }
 
@@ -132,11 +132,11 @@ public class User implements Serializable {
         this.userPhone = userPhone;
     }
 
-    public Date getRegisterDate() {
+    public String getRegisterDate() {
         return registerDate;
     }
 
-    public void setRegisterDate(Date registerDate) {
+    public void setRegisterDate(String registerDate) {
         this.registerDate = registerDate;
     }
 
@@ -164,5 +164,5 @@ public class User implements Serializable {
     public String toString() {
         return "dao.TableUser[ userNumber=" + userNumber + " ]";
     }
-    
+
 }

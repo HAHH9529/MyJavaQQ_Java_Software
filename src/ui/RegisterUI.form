@@ -150,6 +150,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="pwd_Password">
+      <Properties>
+        <Property name="echoChar" type="char" value="*"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_RePassword">
       <Properties>
@@ -157,6 +160,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="pwd_RePassword">
+      <Properties>
+        <Property name="echoChar" type="char" value="*"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_Birthday">
       <Properties>
@@ -200,8 +206,12 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="buttonGroup_Sex"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&#x7537;"/>
+        <Property name="label" type="java.lang.String" value="&#x7537;"/>
+        <Property name="name" type="java.lang.String" value="male" noResource="true"/>
       </Properties>
+      <AccessibilityProperties>
+        <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
+      </AccessibilityProperties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="radio_SexFemale">
       <Properties>
@@ -209,6 +219,7 @@
           <ComponentRef name="buttonGroup_Sex"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#x5973;"/>
+        <Property name="name" type="java.lang.String" value="female" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_Address">

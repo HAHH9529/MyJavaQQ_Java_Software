@@ -5,6 +5,19 @@
  */
 package ui;
 
+import bean.User;
+import dao.UserDao;
+import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Enumeration;
+import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.AbstractButton;
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+
 /**
  *
  * @author 10248
@@ -57,7 +70,11 @@ public class RegisterUI extends javax.swing.JFrame {
 
         lbl_Password.setText("密码：");
 
+        pwd_Password.setEchoChar('*');
+
         lbl_RePassword.setText("确认密码：");
+
+        pwd_RePassword.setEchoChar('*');
 
         lbl_Birthday.setText("出生日期：");
 
@@ -82,10 +99,12 @@ public class RegisterUI extends javax.swing.JFrame {
         lbl_Sex.setText("性别：");
 
         buttonGroup_Sex.add(radio_SexMale);
-        radio_SexMale.setText("男");
+        radio_SexMale.setLabel("男");
+        radio_SexMale.setName("male"); // NOI18N
 
         buttonGroup_Sex.add(radio_SexFemale);
         radio_SexFemale.setText("女");
+        radio_SexFemale.setName("female"); // NOI18N
 
         lbl_Address.setText("所在地：");
 
@@ -194,6 +213,8 @@ public class RegisterUI extends javax.swing.JFrame {
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
+        radio_SexMale.getAccessibleContext().setAccessibleDescription("");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -211,6 +232,41 @@ public class RegisterUI extends javax.swing.JFrame {
 
     private void btn_SubmittedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SubmittedActionPerformed
         // TODO add your handling code here:
+        String Nickname = text_Nickname.getText();
+        String Password = new String(pwd_Password.getPassword());
+        if (Password.equals(new String(pwd_RePassword.getPassword())) == false) {
+            JOptionPane.showMessageDialog(this, "两次输入的密码不一致，请检查密码");
+            return;
+        }
+        int BirthdayYear = Integer.valueOf(text_BirthdayYear.getText());
+        int BirthdayMonth = Integer.valueOf(text_BirthdayMonth.getText());
+        int BirthdayDay = Integer.valueOf(text_BirthdayDay.getText());
+        Calendar nowDate = Calendar.getInstance(Locale.CHINA);//日期检查
+        String Birthday = BirthdayYear + "-" + BirthdayMonth + "-" + BirthdayDay;
+        String Sex = "";
+        Enumeration em = this.buttonGroup_Sex.getElements();
+        while (em.hasMoreElements()) {
+            JRadioButton radio = (JRadioButton) em.nextElement();
+            if (radio.isSelected()) {
+                Sex = radio.getName();
+            }
+        }
+        String Address = text_Address.getText();
+        String Phone = text_Phone.getText();
+      
+        User newUser = new User();
+        newUser.setUserNickname(Nickname);
+        newUser.setUserPassword(Password);
+        newUser.setUserBirthday(Birthday);
+        newUser.setUserSex(Sex);
+        newUser.setUserAddress(Address);
+        newUser.setUserPhone(Phone);
+        UserDao register = new UserDao();
+        try {
+            register.userRegister(newUser);
+        } catch (SQLException ex) {
+            Logger.getLogger(RegisterUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_btn_SubmittedActionPerformed
 

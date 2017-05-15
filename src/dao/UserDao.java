@@ -19,16 +19,14 @@ import util.GetConn;
 public class UserDao {
     public int userRegister(User user) throws SQLException {
         Connection conn = GetConn.GetConn();
-        String sql = "";
-        PreparedStatement ps = conn.prepareStatement("exec proc_CreateQQ ?,?,?,?,?,?");
+        PreparedStatement ps = conn.prepareStatement("use TX_MyJavaQQ_DB exec dbo.proc_CreateQQ ?,?,?,?,?,?");
         ps.setString(1, user.getUserNickname());
         ps.setString(2, user.getUserPassword());
         ps.setString(3, user.getUserSex());
-        ps.setString(4, user.getUserBirthday().toString());
+        ps.setString(4, user.getUserBirthday());
         ps.setString(5, user.getUserAddress());
         ps.setString(6, user.getUserPhone());
         ResultSet rs = ps.executeQuery();
-        
         int ret = rs.getInt("User_Number");
         return ret;
     }

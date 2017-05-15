@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class GetConn {
 
     public static Connection GetConn() throws SQLException {
-        return DriverManager.getConnection("jdbc:sqlserver://locahost:1433;datebaseName=TX_MyJavaQQ_DB","sa","990401");
+        return DriverManager.getConnection("jdbc:sqlserver://127.0.0.1:1433;datebaseName=TX_MyJavaQQ_DB","sa","990401");
     }
     
 }

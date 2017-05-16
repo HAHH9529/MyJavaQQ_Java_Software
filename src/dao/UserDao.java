@@ -37,12 +37,18 @@ public class UserDao {
     public boolean userLogin(User user) throws SQLException {
         boolean ret = false;
         Connection conn = GetConn.GetConn();
-        PreparedStatement ps = conn.prepareStatement("select User_Password from View_Login where User_Number = ?");
+        PreparedStatement ps = conn.prepareStatement("use TX_MyJavaQQ_DB select User_Password from Table_User where User_Number = ?");
+        ps.setInt(1, user.getUserNumber());
+//        try () {
         ResultSet rs = ps.executeQuery();
-        String Password = rs.getString("User_Password");
-        String inputPassword = user.getUserPassword();
-        if (Password.equals(inputPassword)) {
-            ret = true;
+//        } catch (Exception ex) {
+//            System.out.println("");
+//        }
+        while (rs.next()) {
+            String Password = rs.getString("User_Password");
+            if (Password.equals(user.getUserPassword())) {
+                ret = true;
+            }
         }
         return ret;
     }

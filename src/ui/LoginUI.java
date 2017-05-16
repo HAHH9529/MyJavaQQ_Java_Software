@@ -5,6 +5,13 @@
  */
 package ui;
 
+import bean.User;
+import dao.UserDao;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author 10248
@@ -49,6 +56,7 @@ public class LoginUI extends javax.swing.JFrame {
 
         lbl_Password.setText("密码:");
 
+        pwd_Password.setEchoChar('*');
         pwd_Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pwd_PasswordActionPerformed(evt);
@@ -58,6 +66,11 @@ public class LoginUI extends javax.swing.JFrame {
         btn_Login.setBackground(new java.awt.Color(51, 102, 255));
         btn_Login.setForeground(new java.awt.Color(255, 255, 255));
         btn_Login.setText("登陆");
+        btn_Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_LoginActionPerformed(evt);
+            }
+        });
 
         lbl_Register.setForeground(new java.awt.Color(51, 102, 255));
         lbl_Register.setText("注册账号");
@@ -126,6 +139,29 @@ public class LoginUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         new RegisterUI();
     }//GEN-LAST:event_lbl_RegisterMouseClicked
+
+    private void btn_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LoginActionPerformed
+        // TODO add your handling code here:
+        int Number = Integer.valueOf(text_QQ.getText());
+        String Password = new String(pwd_Password.getPassword());
+        User user = new User();
+        user.setUserNumber(Number);
+        user.setUserPassword(Password);
+        UserDao login = new UserDao();
+        boolean flag = false;
+        try {
+            if (login.userLogin(user)) {
+                flag = true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (flag) {
+            System.out.println("登录成功");
+        } else {
+            JOptionPane.showMessageDialog(this, "登录名或密码不正确");
+        }
+    }//GEN-LAST:event_btn_LoginActionPerformed
 
     /**
      * @param args the command line arguments

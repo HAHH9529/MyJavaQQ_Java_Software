@@ -89,6 +89,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="pwd_Password">
+      <Properties>
+        <Property name="echoChar" type="char" value="*"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pwd_PasswordActionPerformed"/>
       </Events>
@@ -103,6 +106,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="&#x767b;&#x9646;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_LoginActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_Register">
       <Properties>

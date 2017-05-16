@@ -284,16 +284,16 @@ public class RegisterUI extends javax.swing.JFrame {
         //获取号码
         String Phone = text_Phone.getText();
 
-        User newUser = new User();
-        newUser.setUserNickname(Nickname);
-        newUser.setUserPassword(Password);
-        newUser.setUserBirthday(Birthday);
-        newUser.setUserSex(Sex);
-        newUser.setUserAddress(Address);
-        newUser.setUserPhone(Phone);
+        User user = new User();
+        user.setUserNickname(Nickname);
+        user.setUserPassword(Password);
+        user.setUserBirthday(Birthday);
+        user.setUserSex(Sex);
+        user.setUserAddress(Address);
+        user.setUserPhone(Phone);
         UserDao register = new UserDao();
         try {
-            register.userRegister(newUser);
+            register.userRegister(user);
         } catch (SQLException ex) {
             Logger.getLogger(RegisterUI.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -46,18 +46,18 @@
                               <Component id="pwd_Password" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="text_BirthdayYear" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="text_BirthdayYear" min="-2" pref="60" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="lbl_BirthdayYear" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="text_BirthdayMonth" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="text_BirthdayMonth" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="radio_SexFemale" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="lbl_BirthdayMonth" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="text_BirthdayDay" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="text_BirthdayDay" min="-2" pref="40" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="lbl_BirthdayDay" min="-2" max="-2" attributes="0"/>
                                   </Group>

@@ -8,6 +8,7 @@ package ui;
 import bean.User;
 import dao.UserDao;
 import java.sql.SQLException;
+import java.time.Year;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Enumeration;
@@ -144,18 +145,18 @@ public class RegisterUI extends javax.swing.JFrame {
                                 .addComponent(text_Nickname)
                                 .addComponent(pwd_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(text_BirthdayYear, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(text_BirthdayYear, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lbl_BirthdayYear)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(text_BirthdayMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(text_BirthdayMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(radio_SexFemale)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lbl_BirthdayMonth)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(text_BirthdayDay, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(text_BirthdayDay, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lbl_BirthdayDay))))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -232,17 +233,41 @@ public class RegisterUI extends javax.swing.JFrame {
 
     private void btn_SubmittedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SubmittedActionPerformed
         // TODO add your handling code here:
+        //获取昵称
         String Nickname = text_Nickname.getText();
+        //获取，并比较密码
         String Password = new String(pwd_Password.getPassword());
         if (Password.equals(new String(pwd_RePassword.getPassword())) == false) {
             JOptionPane.showMessageDialog(this, "两次输入的密码不一致，请检查密码");
             return;
         }
-        int BirthdayYear = Integer.valueOf(text_BirthdayYear.getText());
-        int BirthdayMonth = Integer.valueOf(text_BirthdayMonth.getText());
-        int BirthdayDay = Integer.valueOf(text_BirthdayDay.getText());
-        Calendar nowDate = Calendar.getInstance(Locale.CHINA);//日期检查
-        String Birthday = BirthdayYear + "-" + BirthdayMonth + "-" + BirthdayDay;
+        //获取，并验证出生日期
+        String Birthday;
+        try {
+            int BirthdayYear = Integer.valueOf(text_BirthdayYear.getText());
+            int BirthdayMonth = Integer.valueOf(text_BirthdayMonth.getText());
+            int BirthdayDay = Integer.valueOf(text_BirthdayDay.getText());
+            Calendar nowDate = Calendar.getInstance(Locale.CHINA);//日期检查
+            Birthday = BirthdayYear + "-" + BirthdayMonth + "-" + BirthdayDay;
+            if (BirthdayYear > nowDate.get(nowDate.YEAR)) {
+                JOptionPane.showMessageDialog(this, "请输入正确的出生日期");
+                return;
+            } else if (BirthdayYear == nowDate.get(nowDate.YEAR)) {
+                if (BirthdayMonth > (nowDate.get(nowDate.MONTH) + 1)) {
+                    JOptionPane.showMessageDialog(this, "请输入正确的出生日期");
+                    return;
+                } else if (BirthdayMonth == (nowDate.get(nowDate.MONTH) + 1)) {
+                    if (BirthdayDay > nowDate.get(nowDate.DATE)) {
+                        JOptionPane.showMessageDialog(this, "请输入正确的出生日期");
+                        return;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "请输入正确的出生日期");
+            return;
+        }
+        //获取性别
         String Sex = "";
         Enumeration em = this.buttonGroup_Sex.getElements();
         while (em.hasMoreElements()) {
@@ -251,9 +276,14 @@ public class RegisterUI extends javax.swing.JFrame {
                 Sex = radio.getName();
             }
         }
+        if (Sex.equals("")) {
+            Sex = "unkonw";
+        }
+        //获取地址
         String Address = text_Address.getText();
+        //获取号码
         String Phone = text_Phone.getText();
-      
+
         User newUser = new User();
         newUser.setUserNickname(Nickname);
         newUser.setUserPassword(Password);
@@ -267,7 +297,7 @@ public class RegisterUI extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(RegisterUI.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }//GEN-LAST:event_btn_SubmittedActionPerformed
 
     /**

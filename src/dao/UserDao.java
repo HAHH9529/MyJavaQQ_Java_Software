@@ -20,7 +20,7 @@ public class UserDao {
 
     public int userRegister(User user) throws SQLException {
         Connection conn = GetConn.GetConn();
-        PreparedStatement ps = conn.prepareStatement("use TX_MyJavaQQ_DB exec [dbo].[proc_CreateQQ] (?,?,?,?,?,?)");
+        PreparedStatement ps = conn.prepareStatement("INSERT INTO TX_MyJavaQQ_DB.dbo.Table_User ([User_Nickname],[User_Password],[User_Sex],[User_Birthday],[User_Address],[User_Phone]) VALUES(?,?,?,?,?,?)");
         ps.setString(1, user.getUserNickname());
         ps.setString(2, user.getUserPassword());
         ps.setString(3, user.getUserSex());
@@ -28,8 +28,11 @@ public class UserDao {
         ps.setString(5, user.getUserAddress());
         ps.setString(6, user.getUserPhone());
         ps.execute();
-        ResultSet rs = conn.prepareStatement("select top 1 User_Number from Table_User order by User_Number desc").executeQuery();
-        int ret = rs.getInt("User_Number");
+        ResultSet rs = conn.prepareStatement("select top 1 User_Number from TX_MyJavaQQ_DB.dbo.Table_User order by User_Number desc").executeQuery();
+        int ret = 0;
+        while(rs.next()) {
+            ret = rs.getInt("User_Number");
+        }
         System.out.println(ret);
         return ret;
     }

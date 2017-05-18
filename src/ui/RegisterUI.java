@@ -8,14 +8,11 @@ package ui;
 import bean.User;
 import dao.UserDao;
 import java.sql.SQLException;
-import java.time.Year;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Enumeration;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.AbstractButton;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
@@ -30,7 +27,6 @@ public class RegisterUI extends javax.swing.JFrame {
      */
     public RegisterUI() {
         initComponents();
-        this.setVisible(true);
     }
 
     /**
@@ -65,7 +61,8 @@ public class RegisterUI extends javax.swing.JFrame {
         text_Phone = new javax.swing.JTextField();
         btn_Submitted = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("注册新账号");
 
         lbl_Nickname.setText("昵称：");
 

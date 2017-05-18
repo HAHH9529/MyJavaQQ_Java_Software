@@ -7,9 +7,12 @@ package ui;
 
 import bean.User;
 import dao.UserDao;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -44,6 +47,10 @@ public class LoginUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MyJavaQQ");
+        setAlwaysOnTop(true);
+        setLocation(new java.awt.Point(0, 0));
+        setMaximumSize(new java.awt.Dimension(400, 250));
+        setMinimumSize(new java.awt.Dimension(400, 250));
         setResizable(false);
 
         lbl_QQ.setText("QQ:");
@@ -102,9 +109,9 @@ public class LoginUI extends javax.swing.JFrame {
                     .addComponent(lbl_Register))
                 .addGap(55, 55, 55))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(75, Short.MAX_VALUE)
+                .addGap(75, 75, 75)
                 .addComponent(btn_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addGap(75, 75, 75))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,28 +144,26 @@ public class LoginUI extends javax.swing.JFrame {
 
     private void lbl_RegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_RegisterMouseClicked
         // TODO add your handling code here:
-        new RegisterUI();
+        JFrame reg = new RegisterUI();
+        reg.setVisible(true);
     }//GEN-LAST:event_lbl_RegisterMouseClicked
 
     private void btn_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LoginActionPerformed
         // TODO add your handling code here:
-        int Number = Integer.valueOf(text_QQ.getText());
-        String Password = new String(pwd_Password.getPassword());
-        User user = new User();
-        user.setUserNumber(Number);
-        user.setUserPassword(Password);
-        UserDao login = new UserDao();
-        boolean flag = false;
         try {
+            int Number = Integer.valueOf(text_QQ.getText());
+            String Password = new String(pwd_Password.getPassword());
+            User user = new User();
+            user.setUserNumber(Number);
+            user.setUserPassword(Password);
+            UserDao login = new UserDao();
+            boolean flag = false;
             if (login.userLogin(user)) {
                 flag = true;
+            } else {
+                JOptionPane.showMessageDialog(this, "登录名或密码不正确");
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(LoginUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        if (flag) {
-            System.out.println("登录成功");
-        } else {
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "登录名或密码不正确");
         }
     }//GEN-LAST:event_btn_LoginActionPerformed
@@ -193,7 +198,15 @@ public class LoginUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginUI().setVisible(true);
+                JFrame frame = new LoginUI();
+                int windowWidth = frame.getWidth();
+                int windowHight = frame.getHeight();
+                Toolkit kit = Toolkit.getDefaultToolkit();
+                Dimension screenSize = kit.getScreenSize();
+                int screenWidth = screenSize.width;
+                int screenHight = screenSize.height;
+                frame.setLocation((screenWidth - windowWidth) / 2, (screenHight - windowHight) / 2);
+                frame.setVisible(true);
             }
         });
     }

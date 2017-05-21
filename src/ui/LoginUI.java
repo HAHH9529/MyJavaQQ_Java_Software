@@ -48,7 +48,6 @@ public class LoginUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MyJavaQQ");
         setAlwaysOnTop(true);
-        setLocation(new java.awt.Point(0, 0));
         setMaximumSize(new java.awt.Dimension(400, 250));
         setMinimumSize(new java.awt.Dimension(400, 250));
         setResizable(false);
